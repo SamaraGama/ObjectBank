@@ -1,0 +1,7 @@
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\bin\Debug\ObjectBank.exe.config
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\bin\Debug\ObjectBank.exe
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\bin\Debug\ObjectBank.pdb
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\obj\Debug\ObjectBank.csprojAssemblyReference.cache
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\obj\Debug\ObjectBank.csproj.CoreCompileInputs.cache
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\obj\Debug\ObjectBank.exe
+C:\Users\samar\source\repos\ObjectBank\ObjectBank\obj\Debug\ObjectBank.pdb
