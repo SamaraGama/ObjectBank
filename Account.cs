@@ -31,6 +31,16 @@ namespace ObjectBank
         {
             balance += amount;
         }
+        public bool Transfer(double amount, Account recipient)
+        {
+            if(amount > balance)
+            {
+                return false;
+            }
+            balance -= amount;
+            recipient.Deposit(amount);
+            return true;
+        }
 
     }
 }
