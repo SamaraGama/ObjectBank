@@ -17,5 +17,20 @@ namespace ObjectBank
         //{
 
         //}
+
+        public bool Withdraw(double amount) 
+        {
+            if (amount > balance)
+            {
+                return false;
+            }
+            balance -= amount;
+            return true;
+        }
+        public void Deposit(double amount)
+        {
+            balance += amount;
+        }
+
     }
 }
