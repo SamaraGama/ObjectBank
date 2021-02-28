@@ -8,10 +8,10 @@ namespace ObjectBank
 {
     class Account
     {
-        public Client owner { get; set; }
-        public int  branch { get; set; }
-        public int account { get; set; }
-        public double balance { get; set; }
+        public Client Owner { get; set; }
+        public int Branch { get; set; }
+        public int Id { get; set; }
+        private double _balance;
 
         //public Account(string owner, int branch, int account, double balance)
         //{
