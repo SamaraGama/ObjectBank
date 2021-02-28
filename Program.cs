@@ -13,11 +13,11 @@ namespace ObjectBank
             Account account1 = new Account();
 
             //account1.owner = "Samara";
-            account1.branch = 1234;
-            account1.account = 12341;
-            account1.balance = 50.0;
+            account1.Branch = 1234;
+            account1.Id = 12341;
+            account1.Balance = 50.0;
 
-            Console.WriteLine($"Account owner: {account1.owner}. Branch: {account1.branch}. Account id: {account1.account}. Balance: ${account1.balance}.");
+            Console.WriteLine($"Account owner: {account1.Owner}. Branch: {account1.Branch}. Account id: {account1.Id}. Balance: ${account1.Balance}.");
             Console.ReadLine();
 
         }
