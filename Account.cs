@@ -17,27 +17,41 @@ namespace ObjectBank
         //{
 
         //}
+        public double Balance
+        {
+            get
+            {
+                return _balance;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+            }
+        }
 
         public bool Withdraw(double amount) 
         {
-            if (amount > balance)
+            if (amount > _balance)
             {
                 return false;
             }
-            balance -= amount;
+            _balance -= amount;
             return true;
         }
         public void Deposit(double amount)
         {
-            balance += amount;
+            _balance += amount;
         }
         public bool Transfer(double amount, Account recipient)
         {
-            if(amount > balance)
+            if(amount > _balance)
             {
                 return false;
             }
-            balance -= amount;
+            _balance -= amount;
             recipient.Deposit(amount);
             return true;
         }
