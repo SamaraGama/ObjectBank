@@ -10,14 +10,10 @@ namespace ObjectBank
     {
         static void Main(string[] args)
         {
-            Account account1 = new Account();
+            Client samaraClient = new Client("Samara Gama", 123100, "Software Developer");
+            Account samaraAccount = new Account(samaraClient, 123, 123100, 1000.0);
 
-            //account1.owner = "Samara";
-            account1.Branch = 1234;
-            account1.Id = 12341;
-            account1.Balance = 50.0;
-
-            Console.WriteLine($"Account owner: {account1.Owner}. Branch: {account1.Branch}. Account id: {account1.Id}. Balance: ${account1.Balance}.");
+            Console.WriteLine($"Account owner: {samaraAccount.Owner.Name}. Branch: {samaraAccount.Branch}. Account id: {samaraAccount.Id}. Balance: ${samaraAccount.Balance}.");
             Console.ReadLine();
 
         }
