@@ -9,14 +9,39 @@ namespace ObjectBank
     class Account
     {
         public Client Owner { get; set; }
-        public int Branch { get; set; }
-        public int Id { get; set; }
+        private int _branch;
+        private int _id;
         private double _balance;
-
-        //public Account(string owner, int branch, int account, double balance)
-        //{
-
-        //}
+        public int Branch 
+        {
+            get
+            {
+                return _branch;
+            }
+            set 
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+                _branch = value;
+            }
+        }
+        public int Id 
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+                _id = value;
+            } 
+        }
         public double Balance
         {
             get
@@ -29,7 +54,15 @@ namespace ObjectBank
                 {
                     return;
                 }
+                _balance = value;
             }
+        }
+        public Account(Client owner, int branch, int id, double balance)
+        {
+            Owner = owner;
+            Branch = branch;
+            Id = id;
+            Balance = balance;
         }
 
         public bool Withdraw(double amount) 
