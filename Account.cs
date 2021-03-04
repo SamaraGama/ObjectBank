@@ -8,6 +8,8 @@ namespace ObjectBank
 {
     class Account
     {
+        private static int _accountsTotal;
+        public static int AccountsTotal { get; private set; }
         public Client Owner { get; set; }
         private int _branch;
         private int _id;
@@ -63,6 +65,8 @@ namespace ObjectBank
             Branch = branch;
             Id = id;
             Balance = balance;
+            AccountsTotal++;
+
         }
 
         public bool Withdraw(double amount) 
