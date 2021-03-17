@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectBank
+﻿namespace ObjectBank
 {
-    class Account
+    internal class Account
     {
-        private static int _accountsTotal;
         public static int AccountsTotal { get; private set; }
         public Client Owner { get; set; }
         private int _branch;
         private int _id;
         private double _balance;
-        public int Branch 
+
+        public int Branch
         {
             get
             {
                 return _branch;
             }
-            set 
+            set
             {
                 if (value <= 0)
                 {
@@ -29,7 +23,8 @@ namespace ObjectBank
                 _branch = value;
             }
         }
-        public int Id 
+
+        public int Id
         {
             get
             {
@@ -42,8 +37,9 @@ namespace ObjectBank
                     return;
                 }
                 _id = value;
-            } 
+            }
         }
+
         public double Balance
         {
             get
@@ -59,6 +55,7 @@ namespace ObjectBank
                 _balance = value;
             }
         }
+
         public Account(Client owner, int branch, int id, double balance)
         {
             Owner = owner;
@@ -66,10 +63,9 @@ namespace ObjectBank
             Id = id;
             Balance = balance;
             AccountsTotal++;
-
         }
 
-        public bool Withdraw(double amount) 
+        public bool Withdraw(double amount)
         {
             if (amount > _balance)
             {
@@ -78,13 +74,15 @@ namespace ObjectBank
             _balance -= amount;
             return true;
         }
+
         public void Deposit(double amount)
         {
             _balance += amount;
         }
+
         public bool Transfer(double amount, Account recipient)
         {
-            if(amount > _balance)
+            if (amount > _balance)
             {
                 return false;
             }
@@ -92,6 +90,5 @@ namespace ObjectBank
             recipient.Deposit(amount);
             return true;
         }
-
     }
 }
