@@ -3,6 +3,7 @@
     internal class Account
     {
         public static int AccountsTotal { get; private set; }
+        public static double OperationsTax { get; private set; }
         public Client Owner { get; set; }
         private int _branch;
         private int _id;
@@ -63,6 +64,7 @@
             Id = id;
             Balance = balance;
             AccountsTotal++;
+            OperationsTax = 30 / AccountsTotal;
         }
 
         public bool Withdraw(double amount)
