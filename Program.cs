@@ -19,6 +19,7 @@ namespace ObjectBank
             Console.WriteLine($"There are currently {Account.AccountsTotal} accounts.");
             Console.WriteLine($"The current Tax per operation is: {Account.OperationsTax}");
             Console.ReadLine();
+        
         }
     }
 }

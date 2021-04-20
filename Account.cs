@@ -5,41 +5,11 @@
         public static int AccountsTotal { get; private set; }
         public static double OperationsTax { get; private set; }
         public Client Owner { get; set; }
-        private int _branch;
-        private int _id;
         private double _balance;
 
-        public int Branch
-        {
-            get
-            {
-                return _branch;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
-                _branch = value;
-            }
-        }
+        public int Branch { get; }
 
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
-                _id = value;
-            }
-        }
+        public int Id { get; }
 
         public double Balance
         {
