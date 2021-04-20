@@ -43,7 +43,7 @@
             {
                 return false;
             }
-            _balance -= amount;
+            _balance -= amount + OperationsTax;
             return true;
         }
 
@@ -58,7 +58,7 @@
             {
                 return false;
             }
-            _balance -= amount;
+            _balance -= amount + OperationsTax;
             recipient.Deposit(amount);
             return true;
         }
