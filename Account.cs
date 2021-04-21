@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectBank.Exceptions;
+using System;
 
 namespace ObjectBank
 {
@@ -48,14 +49,13 @@ namespace ObjectBank
             OperationsTax = 30 / AccountsTotal;
         }
 
-        public bool Withdraw(double amount)
+        public void Withdraw(double amount)
         {
             if (amount > _balance)
             {
-                return false;
+                throw new InsufficientBalanceException($"Unable to withdraw {amount} due to insufficient balance.");
             }
             _balance -= amount + OperationsTax;
-            return true;
         }
 
         public void Deposit(double amount)
@@ -63,15 +63,14 @@ namespace ObjectBank
             _balance += amount;
         }
 
-        public bool Transfer(double amount, Account recipient)
+        public void Transfer(double amount, Account recipient)
         {
             if (amount > _balance)
             {
-                return false;
+                throw new InsufficientBalanceException($"Unable to transfer {amount} due to insufficient balance.");
             }
             _balance -= amount + OperationsTax;
             recipient.Deposit(amount);
-            return true;
         }
     }
 }

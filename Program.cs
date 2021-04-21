@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectBank.Exceptions;
+using System;
 
 namespace ObjectBank
 {
@@ -18,6 +19,25 @@ namespace ObjectBank
             Console.WriteLine($"Account owner: {johnAccount.Owner.Name}. Branch: {johnAccount.Branch}. Account id: {johnAccount.Id}. Balance: ${johnAccount.Balance}.");
             Console.WriteLine($"There are currently {Account.AccountsTotal} accounts.");
             Console.WriteLine($"The current Tax per operation is: {Account.OperationsTax}");
+            try
+            {
+                Client crowleyClient = new Client("Mr. Crowley", 123666, "Charming and Alarming");
+                Account crowleyAccount = new Account(crowleyClient, 123, 0, 666.0);
+            }
+            catch (ArgumentException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {
+                janeAccount.Transfer(2000, johnAccount);
+            }
+            catch (InsufficientBalanceException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         
         }
