@@ -1,4 +1,6 @@
-﻿namespace ObjectBank
+﻿using System;
+
+namespace ObjectBank
 {
     internal class Account
     {
@@ -29,6 +31,15 @@
 
         public Account(Client owner, int branch, int id, double balance)
         {
+            if (branch <= 0)
+            {
+                throw new ArgumentException("Branch Id must be higher than zero (0).", nameof(branch));
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("Account Id must be higher than zero (0).", nameof(id));
+            }
+
             Owner = owner;
             Branch = branch;
             Id = id;
