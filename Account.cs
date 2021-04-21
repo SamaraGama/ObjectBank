@@ -53,7 +53,8 @@ namespace ObjectBank
         {
             if (amount > _balance)
             {
-                throw new InsufficientBalanceException($"{Owner.Name} is unable to withdraw {amount} due to insufficient balance.");
+                throw new InsufficientBalanceException(Balance, amount);
+                //throw new InsufficientBalanceException($"{Owner.Name} is unable to withdraw {amount} due to insufficient balance.");
             }
             _balance -= amount + OperationsTax;
         }
@@ -67,7 +68,8 @@ namespace ObjectBank
         {
             if (amount > _balance)
             {
-                throw new InsufficientBalanceException($"{Owner.Name} is unable to transfer {amount} due to insufficient balance.");
+                throw new InsufficientBalanceException(Balance, amount);
+                // throw new InsufficientBalanceException($"{Owner.Name} is unable to transfer {amount} due to insufficient balance.");
             }
             _balance -= amount + OperationsTax;
             recipient.Deposit(amount);
